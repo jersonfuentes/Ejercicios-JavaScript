@@ -197,7 +197,7 @@
     }
     .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .speaker h2 { margin-bottom: 6px; }
-    .speaker .role { color: var(--navy); font-weight: 600; margin-bottom: 20px; }
+    .role { color: var(--navy); font-weight: 600; margin-bottom: 20px; }
     .creds { display: grid; gap: 12px; }
     .creds li { position: relative; padding-left: 28px; }
     .creds li::before {
@@ -206,13 +206,29 @@
     }
     .creds li span { color: var(--muted); }
 
-    .training { margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--line); }
-    .training h3 { font-size: 1.35rem; margin-bottom: 18px; }
+    .pull { font-family: var(--serif); font-size: clamp(1.15rem, 2.4vw, 1.4rem); font-weight: 500; line-height: 1.4; margin-bottom: 22px; max-width: 34ch; }
+
+    .expositor-head { display: flex; align-items: center; gap: 18px; margin: 4px 0 26px; }
+    .expositor-head h2 { font-size: clamp(1.5rem, 3.6vw, 2.1rem); }
+    .expositor-head .role { margin: 4px 0 0; }
+    .avatar {
+      width: 76px; height: 76px; flex: none; border-radius: 50%;
+      object-fit: cover; object-position: center 15%;
+      border: 3px solid var(--paper); box-shadow: 0 0 0 2px var(--sky);
+    }
+    .expositor-creds { max-width: 760px; }
+
+    .formation-title { font-size: 1.35rem; margin: 44px 0 20px; padding-top: 32px; border-top: 1px solid var(--line); }
+    .formation { display: grid; gap: 30px; }
+    .f-group h4 {
+      font: 600 .78rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase;
+      color: var(--navy); margin: 0 0 12px;
+    }
     .training-grid { display: grid; gap: 12px; }
-    .training-grid li { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+    .training-grid li { background: var(--sand); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
     .training-grid strong { display: block; font-family: var(--serif); font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
     .training-grid span { display: block; margin-top: 4px; font-size: .92rem; color: var(--muted); line-height: 1.5; }
-    @media (min-width: 640px) { .training-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 900px) { .formation { grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; } }
 
     /* Inscripción */
     .signup {
@@ -382,38 +398,71 @@
       </div>
     </section>
 
-    <!-- EXPOSITOR -->
-    <section class="section" id="expositor">
+    <!-- FUNDADOR -->
+    <section class="section" id="fundador">
       <div class="container speaker">
         <figure class="portrait">
           <img src="img/herbert-grenett.jpg" alt="Mg. Herbert Grenett Ortiz" width="600" height="750" loading="lazy">
         </figure>
 
         <div>
-          <span class="kicker">Sobre el expositor</span>
+          <span class="kicker">Fundador de ICPI</span>
           <h2>Mg. Herbert Grenett Ortiz</h2>
-          <p class="role">Pastor · Psicólogo clínico · Director y docente de ICPI</p>
+          <p class="role">Fundador y director del Instituto de Consejería Pastoral Integral</p>
+          <p class="pull">Pastor y psicólogo clínico, une en su trabajo el cuidado pastoral con la práctica clínica.</p>
           <ul class="creds">
-            <li>Ministro ordenado de <span>Las Asambleas de Dios de Chile</span> y psicólogo clínico acreditado.</li>
-            <li>Máster en <span>terapias psicológicas de tercera generación</span>, con entrenamientos clínicos centrados en adicciones, depresión, ansiedad, trauma y TOC.</li>
+            <li>Ministro ordenado de <span>Las Asambleas de Dios de Chile</span>.</li>
             <li>Pastorea junto a su esposa Carolina la <span>Iglesia Luz de Esperanza para la Familia</span>, en Quilpué, Chile.</li>
-            <li>Docente de pregrado y posgrado en la formación de psicólogos clínicos, a nivel nacional e internacional, y profesor en institutos bíblicos interdenominacionales.</li>
+            <li>Docente en institutos bíblicos interdenominacionales.</li>
             <li>Finalizando una maestría en teología práctica en la <span>Facultad de Teología de Las Asambleas de Dios de América Latina y el Caribe</span>.</li>
           </ul>
+        </div>
+      </div>
+    </section>
 
-          <div class="training">
-            <h3>Formación y acreditaciones</h3>
+    <!-- EXPOSITOR Y FORMACIÓN -->
+    <section class="section who" id="expositor">
+      <div class="container">
+        <span class="kicker">Sobre el expositor</span>
+        <div class="expositor-head">
+          <img class="avatar" src="img/herbert-grenett.jpg" alt="" width="76" height="76" loading="lazy">
+          <div>
+            <h2>Mg. Herbert Grenett Ortiz</h2>
+            <p class="role">Expositor de este curso taller</p>
+          </div>
+        </div>
+
+        <ul class="creds expositor-creds">
+          <li>Psicólogo clínico acreditado, con <span>máster en terapias psicológicas de tercera generación</span>.</li>
+          <li>Entrenamientos clínicos centrados en adicciones, depresión, ansiedad, trauma y TOC.</li>
+          <li>Docente de pregrado y posgrado en la formación de psicólogos clínicos, a nivel nacional e internacional.</li>
+        </ul>
+
+        <h3 class="formation-title">Formación y acreditaciones</h3>
+        <div class="formation">
+          <div class="f-group">
+            <h4>Base clínica y acreditación</h4>
             <ul class="training-grid">
               <li><strong>Licenciado en Psicología</strong><span>Universidad del Mar, Valparaíso (2005)</span></li>
               <li><strong>Especialista en Psicoterapia acreditado</strong><span>CONAPC: Sociedad Chilena de Psicología Clínica y Colegio de Psicólogos de Chile (2015)</span></li>
               <li><strong>Máster en Terapias de Tercera Generación</strong><span>ISEB · Universidad Isabel I de Castilla (2023–2024)</span></li>
+            </ul>
+          </div>
+          <div class="f-group">
+            <h4>Terapias cognitivo-conductuales</h4>
+            <ul class="training-grid">
               <li><strong>Terapia Cognitivo-Conductual</strong><span>Postítulo de especialización y acreditación clínica, Instituto del Comportamiento (2012–2014)</span></li>
               <li><strong>Terapia Conductual Dialéctica (DBT)</strong><span>Entrenamiento con DBT Latinoamérica y Linehan Institute Behavioral Tech (2016–2017)</span></li>
+              <li><strong>Terapia de Aceptación y Compromiso (ACT)</strong><span>Diplomado en curso, ITECOC México (2025 a la fecha)</span></li>
+            </ul>
+          </div>
+          <div class="f-group">
+            <h4>Áreas de especialización</h4>
+            <ul class="training-grid">
               <li><strong>TOC y espectro obsesivo-compulsivo</strong><span>Diplomado, TOC Argentina (2022) · Entrenamiento clínico BTTI, International OCD Foundation (2024)</span></li>
               <li><strong>Adicciones</strong><span>Diplomados en prevención, tratamiento y rehabilitación, Facultad de Medicina, Universidad de Santiago (2005 y 2008)</span></li>
               <li><strong>Trauma</strong><span>Entrenamiento en Terapia de Exposición Prolongada (2021) y en Terapia de Exposición Narrativa (2023)</span></li>
               <li><strong>Depresión y ansiedad</strong><span>Actualización en Activación Conductual y TCC de la depresión (2020) y en trastornos de ansiedad (2014)</span></li>
-              <li><strong>Terapia de Aceptación y Compromiso (ACT)</strong><span>Diplomado en curso, ITECOC México (2025 a la fecha)</span></li>
             </ul>
           </div>
         </div>
