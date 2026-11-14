@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_CL">
   <meta property="og:title" content="La salud mental del líder: piedra angular para el ministerio efectivo">
-  <meta property="og:description" content="Curso taller online · Sábado 30 de mayo · 09:00 a 12:00 hrs (horario de Chile) · Instituto de Consejería Pastoral Integral.">
+  <meta property="og:description" content="Curso taller online en vivo · Próxima edición por anunciar · Instituto de Consejería Pastoral Integral.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,7 +97,7 @@
 
     /* Navegación de la barra */
     .topbar .container { position: relative; flex-wrap: wrap; }
-    .nav { display: flex; flex-wrap: wrap; gap: 2px 26px; order: 3; width: 100%; padding-bottom: 10px; }
+    .nav { display: flex; flex-wrap: wrap; gap: 2px 22px; order: 3; width: 100%; padding-bottom: 10px; }
     .nav a {
       position: relative; text-decoration: none; font-weight: 500; font-size: .95rem; color: var(--ink);
       padding: 8px 0; border-bottom: 2px solid transparent;
@@ -116,7 +116,7 @@
     .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
     .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    @media (max-width: 899px) {
+    @media (max-width: 1179px) {
       .js .menu-toggle { display: inline-flex; }
       .js .nav {
         display: none; position: absolute; left: 0; right: 0; top: 100%; width: auto; order: 0;
@@ -127,7 +127,7 @@
       .js .nav a { padding: 15px 2px; font-size: 1.02rem; border-bottom: 1px solid var(--line); }
       .js .nav a:last-child { border-bottom: 0; }
     }
-    @media (min-width: 900px) {
+    @media (min-width: 1180px) {
       .topbar .container { flex-wrap: nowrap; }
       .nav { order: 0; width: auto; padding-bottom: 0; margin-left: auto; margin-right: 12px; }
     }
@@ -274,6 +274,54 @@
     @media (min-width: 900px) { .formation { grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; } }
 
     /* Inscripción */
+    /* Barra de aviso */
+    .announce { background: var(--navy); color: #fff; text-align: center; font-size: .9rem; line-height: 1.4; padding: 9px 16px; }
+    .announce a { color: var(--sky); font-weight: 600; text-underline-offset: 3px; margin-left: 6px; white-space: nowrap; }
+
+    .badge {
+      display: inline-block; font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 999px; background: #e7ecf8; color: var(--navy);
+    }
+    .badge-soon { background: var(--sky); color: var(--ink); }
+    .link-arrow { display: inline-block; font-weight: 600; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--sky); padding-bottom: 1px; }
+    .link-arrow:hover { border-bottom-color: var(--navy); }
+    .sub-title { font-size: 1.35rem; margin: 52px 0 18px; }
+
+    /* Próximos eventos */
+    .events-grid { display: grid; gap: 20px; }
+    .event-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 26px; background: var(--paper); display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+    .event-card h3 { font-size: 1.6rem; }
+    .event-card .event-sub { font-family: var(--serif); font-size: 1.1rem; color: var(--muted); margin-top: -8px; }
+    .event-card.soon { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .event-card.soon p { color: rgba(255,255,255,.85); }
+    .event-facts { display: grid; gap: 8px; margin: 4px 0 6px; }
+    .event-facts li { position: relative; padding-left: 22px; font-size: .98rem; }
+    .event-facts li::before { content: ""; position: absolute; left: 3px; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--sky); }
+    .event-card .btn, .event-card .link-arrow { margin-top: auto; }
+
+    /* Cursos dictados */
+    .courses { display: grid; gap: 18px; }
+    .course { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 22px; display: flex; flex-direction: column; gap: 10px; }
+    .course .tag { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--navy); }
+    .course h3 { font-size: 1.28rem; }
+    .course-sub { font-family: var(--serif); color: var(--muted); font-size: 1rem; line-height: 1.4; }
+    .course-desc { color: var(--muted); font-size: .96rem; }
+    .course-meta { margin-top: auto; padding-top: 10px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; font-size: .92rem; font-weight: 500; }
+    .course .link-arrow { align-self: flex-start; font-size: .95rem; }
+    #cursos .chip { background: var(--paper); }
+    .team { display: grid; gap: 14px; }
+    .team li { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+    .team strong { display: block; font-family: var(--serif); font-size: 1.08rem; font-weight: 600; }
+    .team span { display: block; margin-top: 2px; font-size: .92rem; color: var(--muted); }
+    .icpi-line { color: var(--muted); max-width: 54ch; margin: -6px 0 20px; }
+
+    @media (min-width: 760px) {
+      .events-grid { grid-template-columns: 1fr 1fr; }
+      .courses { grid-template-columns: 1fr 1fr; }
+      .team { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1040px) { .courses { grid-template-columns: repeat(3, 1fr); } }
+
     .signup {
       background:
         radial-gradient(700px 400px at 100% 0%, rgba(156,176,219,.18), transparent 60%),
@@ -291,13 +339,15 @@
     .price strong { font-family: var(--serif); font-size: 2rem; font-weight: 600; }
     .signup .meta { margin-top: 26px; color: rgba(255,255,255,.8); }
     .signup .btn { margin-top: 30px; }
+    .signup .note a { overflow-wrap: anywhere; }
     .signup .note { margin-top: 18px; font-size: .92rem; color: rgba(255,255,255,.65); }
 
     footer { background: #0c1330; color: rgba(255,255,255,.75); padding: 44px 0; font-size: .95rem; }
     .foot { display: grid; gap: 22px; }
     .foot-logo { height: 54px; width: auto; margin-bottom: 18px; }
     .foot .blessing { font-family: var(--serif); font-size: 1.2rem; color: #fff; }
-    .foot a { color: var(--sky); text-underline-offset: 3px; }
+    .foot a { color: var(--sky); text-underline-offset: 3px; overflow-wrap: anywhere; }
+    .foot p + p { margin-top: 4px; }
 
     /* ---------- Escritorio ---------- */
     @media (min-width: 640px) {
@@ -319,6 +369,8 @@
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
 
+  <div class="announce">Nuevas fechas de cursos online en preparación. <a href="#eventos">Ver próximos eventos →</a></div>
+
   <header class="topbar">
     <div class="container">
       <a class="brand" href="#inicio">
@@ -326,15 +378,16 @@
       </a>
 
       <nav class="nav" id="menu" aria-label="Secciones de la página">
-        <a href="#datos">Próximos eventos</a>
+        <a href="#eventos">Próximos eventos</a>
         <a href="#aprenderas">Qué aprenderás</a>
         <a href="#para-quien">Para quién</a>
         <a href="#fundador">Fundador</a>
         <a href="#expositor">Expositor</a>
+        <a href="#cursos">Cursos dictados</a>
       </nav>
 
       <div class="bar-actions">
-        <a class="btn btn-navy" href="#inscripcion">Inscríbete</a>
+        <a class="btn btn-navy" href="#inscripcion">Recibir aviso</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
           <span></span><span></span><span></span>
         </button>
@@ -352,7 +405,7 @@
           <h1>La salud mental del líder: <em>piedra angular</em> para el ministerio efectivo</h1>
           <p class="lead">Aprende a reconocer, valorar y cultivar tu salud mental y espiritual como fundamento de un ministerio efectivo, sustentable y fiel al llamado de Dios.</p>
           <div class="hero-cta">
-            <a class="btn btn-sky btn-lg" href="#inscripcion">Quiero inscribirme</a>
+            <a class="btn btn-sky btn-lg" href="#inscripcion">Quiero recibir el aviso</a>
             <a class="btn btn-ghost btn-lg" href="#aprenderas">Ver qué aprenderás</a>
           </div>
           <p class="expositor-line">Imparte: <strong>Mg. Herbert Grenett Ortiz</strong> · pastor y psicólogo clínico · director de ICPI</p>
@@ -362,23 +415,61 @@
           <h2 id="datos-titulo">Datos del curso</h2>
           <dl>
             <div class="fact">
-              <dt>Fecha</dt>
-              <dd>Sábado 30 de mayo</dd>
+              <dt>Próxima edición</dt>
+              <dd>Por anunciar</dd>
             </div>
             <div class="fact">
-              <dt>Horario</dt>
-              <dd>09:00 a 12:00 hrs<small>Horario de Chile</small></dd>
+              <dt>Última edición</dt>
+              <dd>Sábado 30 de mayo de 2026</dd>
             </div>
             <div class="fact">
               <dt>Modalidad</dt>
-              <dd>Sincrónica, vía Zoom</dd>
+              <dd>Sincrónica, vía Zoom<small>3 horas · horario de Chile</small></dd>
             </div>
             <div class="fact">
-              <dt>Inscripción</dt>
+              <dt>Valor última edición</dt>
               <dd>$20.000 CLP<small>Extranjeros: USD 25</small></dd>
             </div>
           </dl>
         </aside>
+      </div>
+    </section>
+
+    <!-- PRÓXIMOS EVENTOS -->
+    <section class="section who" id="eventos">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Próximos eventos</span>
+          <h2>Nuevas fechas en preparación</h2>
+          <p>Formamos en consejería pastoral integral con cursos online en vivo. Cuando abramos las próximas inscripciones, te avisaremos primero.</p>
+        </div>
+
+        <div class="events-grid">
+          <article class="event-card soon">
+            <span class="badge badge-soon">Próximamente</span>
+            <h3>Próxima edición por anunciar</h3>
+            <p>Escríbenos y te avisamos apenas haya fecha.</p>
+            <ul class="event-facts">
+              <li>Sábados por la mañana (horario de Chile)</li>
+              <li>Online en vivo, vía Zoom</li>
+              <li>Valor de las últimas ediciones: $20.000 CLP · Extranjeros: USD 25</li>
+            </ul>
+            <a class="btn btn-sky" href="mailto:saludmentalenlaiglesia@gmail.com?subject=Quiero%20recibir%20informaci%C3%B3n%20de%20la%20pr%C3%B3xima%20edici%C3%B3n">Recibir aviso por correo</a>
+          </article>
+
+          <article class="event-card">
+            <span class="badge">Último curso realizado</span>
+            <h3>Crecer con Autismo</h3>
+            <p class="event-sub">Desafíos y apoyos en las distintas etapas de la vida</p>
+            <p>Una mirada integral al autismo, recorriendo las distintas etapas de la vida y los apoyos que favorecen el desarrollo, el bienestar y la inclusión.</p>
+            <ul class="event-facts">
+              <li>Sábado 17 de octubre de 2026</li>
+              <li>09:30 a 12:30 hrs (horario de Chile) · vía Zoom</li>
+              <li>$20.000 CLP · Extranjeros: USD 25</li>
+            </ul>
+            <a class="link-arrow" href="https://www.instagram.com/icpi.consejeria/p/DdPam0oB9zR/" rel="noopener">Ver la publicación en Instagram →</a>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -467,6 +558,7 @@
           <h2>Mg. Herbert Grenett Ortiz</h2>
           <p class="role">Fundador y director del Instituto de Consejería Pastoral Integral</p>
           <p class="pull">Pastor y psicólogo clínico, une en su trabajo el cuidado pastoral con la práctica clínica.</p>
+          <p class="icpi-line">ICPI ofrece formación en consejería pastoral integral que une fe y salud mental, en modalidad online.</p>
           <ul class="creds">
             <li>Ministro ordenado de <span>Las Asambleas de Dios de Chile</span>.</li>
             <li>Pastorea junto a su esposa Carolina la <span>Iglesia Luz de Esperanza para la Familia</span>, en Quilpué, Chile.</li>
@@ -526,23 +618,93 @@
       </div>
     </section>
 
-    <!-- INSCRIPCIÓN -->
-    <section class="signup" id="inscripcion">
+    <!-- CURSOS DICTADOS -->
+    <section class="section" id="cursos">
       <div class="container">
-        <span class="kicker">Inscripción</span>
-        <h2>Reserva tu cupo y cuida el alma desde la que sirves</h2>
-
-        <div class="price-row">
-          <div class="price"><small>Chile</small><strong>$20.000 CLP</strong></div>
-          <div class="price"><small>Extranjeros</small><strong>USD 25</strong></div>
+        <div class="section-head">
+          <span class="kicker">Cursos que ya hemos dictado</span>
+          <h2>Fe y salud mental, curso a curso</h2>
+          <p>Formación en consejería pastoral integral, en modalidad online. Estos son los cursos de las últimas ediciones.</p>
         </div>
 
-        <p class="meta">Sábado 30 de mayo · 09:00 a 12:00 hrs (horario de Chile) · En vivo por Zoom</p>
+        <div class="courses">
+            <article class="course">
+              <span class="tag">Autismo e inclusión</span>
+              <h3>Crecer con Autismo</h3>
+              <p class="course-sub">Desafíos y apoyos en las distintas etapas de la vida</p>
+              <p class="course-desc">Una mirada integral al autismo y a los apoyos que favorecen el desarrollo, el bienestar y la inclusión.</p>
+              <a class="link-arrow" href="https://www.instagram.com/icpi.consejeria/p/DdPam0oB9zR/" rel="noopener">Ver en Instagram →</a>
+              <p class="course-meta"><span>Sábado 17 de octubre de 2026</span><span class="badge">Realizado</span></p>
+            </article>
+            <article class="course">
+              <span class="tag">Familia y matrimonio</span>
+              <h3>Renovando Nuestro Amor</h3>
+              <p class="course-sub">Herramientas prácticas para fortalecer el matrimonio</p>
+              <p class="course-desc">Principios cristianos y herramientas para fortalecer la comunicación, resolver conflictos con sabiduría y cultivar el perdón.</p>
+              <a class="link-arrow" href="https://www.instagram.com/icpi.consejeria/p/DbMN4c4Fb5T/" rel="noopener">Ver en Instagram →</a>
+              <p class="course-meta"><span>Sábado 1 de agosto de 2026</span><span class="badge">Realizado</span></p>
+            </article>
+            <article class="course">
+              <span class="tag">Liderazgo cristiano</span>
+              <h3>La Salud Mental del Líder</h3>
+              <p class="course-sub">Piedra angular para un liderazgo efectivo</p>
+              <p class="course-desc">Para líderes de iglesias que desean cuidar su salud mental y espiritual como base de un ministerio efectivo y sustentable.</p>
+              <a class="link-arrow" href="#aprenderas">Ver el temario →</a>
+              <p class="course-meta"><span>Sábado 30 de mayo de 2026</span><span class="badge">Realizado</span></p>
+            </article>
+            <article class="course">
+              <span class="tag">Familia y crianza</span>
+              <h3>Cómo acompañar HOY a los padres en la crianza</h3>
+              <p class="course-meta"><span>Sábado 28 de marzo de 2026</span><span class="badge">Realizado</span></p>
+            </article>
+            <article class="course">
+              <span class="tag">Duelo y consuelo</span>
+              <h3>Consejería Pastoral Integral del Duelo</h3>
+              <p class="course-meta"><span>Sábado 22 de noviembre de 2025</span><span class="badge">Realizado</span></p>
+            </article>
+            <article class="course">
+              <span class="tag">Prevención del suicidio</span>
+              <h3>Intervención Pastoral en la Prevención del Suicidio</h3>
+              <p class="course-meta"><span>Edición anterior</span><span class="badge">Realizado</span></p>
+            </article>
+        </div>
 
-        <!-- ▼▼ PEGAR AQUÍ EL LINK DEL FORMULARIO DE INSCRIPCIÓN ▼▼ -->
-        <a class="btn btn-sky btn-lg" href="REEMPLAZAR_LINK_FORMULARIO">Ir al formulario de inscripción</a>
+        <h3 class="sub-title">Temas que trabajamos</h3>
+        <ul class="chips">
+          <li class="chip">Consejería pastoral integral</li>
+          <li class="chip">Duelo y consuelo</li>
+          <li class="chip">Fe y salud mental en la iglesia</li>
+          <li class="chip">Cómo acompañar al que sufre</li>
+          <li class="chip">Familia, matrimonio y crianza</li>
+          <li class="chip">Liderazgo cristiano</li>
+          <li class="chip">Prevención del suicidio</li>
+          <li class="chip">Autismo e inclusión</li>
+        </ul>
 
-        <p class="note">¿Dudas? Escríbenos por Instagram a <a href="https://www.instagram.com/icpi.consejeria/" rel="noopener">@icpi.consejeria</a>, donde encontrarás más información del curso y del Instituto.</p>
+        <h3 class="sub-title">Equipo docente de ICPI</h3>
+        <ul class="team">
+          <li><strong>Herbert Grenett O.</strong><span>Director · pastor y psicólogo clínico</span></li>
+          <li><strong>Jorge Sobarzo B.</strong><span>Médico psiquiatra infanto-juvenil</span></li>
+          <li><strong>Vladimir Rodríguez</strong><span>Psicólogo</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PRÓXIMA EDICIÓN / AVISO -->
+    <section class="signup" id="inscripcion">
+      <div class="container">
+        <span class="kicker">Próxima edición</span>
+        <h2>Sé de los primeros en enterarte de la próxima fecha</h2>
+        <p class="meta">Escríbenos y te avisamos cuando abramos inscripciones. Formato habitual: sábados por la mañana, online en vivo por Zoom.</p>
+
+        <div class="price-row">
+          <div class="price"><small>Valor última edición · Chile</small><strong>$20.000 CLP</strong></div>
+          <div class="price"><small>Valor última edición · Extranjeros</small><strong>USD 25</strong></div>
+        </div>
+
+        <a class="btn btn-sky btn-lg" href="mailto:saludmentalenlaiglesia@gmail.com?subject=Quiero%20recibir%20informaci%C3%B3n%20de%20la%20pr%C3%B3xima%20edici%C3%B3n">Recibir aviso por correo</a>
+
+        <p class="note">Escríbenos a <a href="mailto:saludmentalenlaiglesia@gmail.com">saludmentalenlaiglesia@gmail.com</a> o por Instagram a <a href="https://www.instagram.com/icpi.consejeria/" rel="noopener">@icpi.consejeria</a>.</p>
       </div>
     </section>
   </main>
@@ -553,7 +715,10 @@
         <img class="foot-logo" src="img/logo-blanco.png" alt="ICPI – Instituto de Consejería Pastoral Integral" width="940" height="202">
         <p class="blessing">Bendiciones para tu vida, familia y ministerio.</p>
       </div>
-      <p><a href="https://www.instagram.com/icpi.consejeria/" rel="noopener">Síguenos en Instagram · @icpi.consejeria</a></p>
+      <div>
+        <p><a href="mailto:saludmentalenlaiglesia@gmail.com">saludmentalenlaiglesia@gmail.com</a></p>
+        <p><a href="https://www.instagram.com/icpi.consejeria/" rel="noopener">Síguenos en Instagram · @icpi.consejeria</a></p>
+      </div>
     </div>
   </footer>
 
