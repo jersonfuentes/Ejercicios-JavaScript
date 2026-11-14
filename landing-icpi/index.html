@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.className += ' js';</script>
   <title>La salud mental del líder · Curso taller ICPI</title>
   <meta name="description" content="Curso taller online en vivo con el Mg. Herbert Grenett, pastor y psicólogo clínico: aprende a cuidar tu salud mental y espiritual para un ministerio efectivo y sustentable.">
   <meta name="theme-color" content="#ffffff">
@@ -55,7 +56,8 @@
     ul { margin: 0; padding: 0; list-style: none; }
 
     .container { width: 100%; max-width: 1120px; margin-inline: auto; padding-inline: 20px; }
-    section { scroll-margin-top: 72px; }
+    section { scroll-margin-top: 80px; }
+    .facts { scroll-margin-top: 96px; }
 
     .skip {
       position: absolute; left: 12px; top: -60px; z-index: 100;
@@ -92,6 +94,47 @@
     .topbar .btn { min-height: 42px; padding: 8px 20px; font-size: .95rem; }
     .btn-navy { background: var(--navy); color: #fff; }
     .btn-navy:hover { background: var(--navy-soft); }
+
+    /* Navegación de la barra */
+    .topbar .container { position: relative; flex-wrap: wrap; }
+    .nav { display: flex; flex-wrap: wrap; gap: 2px 26px; order: 3; width: 100%; padding-bottom: 10px; }
+    .nav a {
+      position: relative; text-decoration: none; font-weight: 500; font-size: .95rem; color: var(--ink);
+      padding: 8px 0; border-bottom: 2px solid transparent;
+      transition: color .15s ease, border-color .15s ease;
+    }
+    .nav a:hover { color: var(--navy-soft); border-bottom-color: var(--sky); }
+    .nav a[aria-current="true"] { color: var(--navy); border-bottom-color: var(--navy); }
+    .bar-actions { display: flex; align-items: center; gap: 10px; }
+    .menu-toggle {
+      display: none; width: 44px; height: 44px; padding: 0; border-radius: 12px;
+      border: 1px solid var(--line); background: #fff; cursor: pointer;
+      flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+    }
+    .menu-toggle span { display: block; width: 20px; height: 2px; background: var(--navy); border-radius: 2px; transition: transform .2s ease, opacity .2s ease; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 899px) {
+      .js .menu-toggle { display: inline-flex; }
+      .js .nav {
+        display: none; position: absolute; left: 0; right: 0; top: 100%; width: auto; order: 0;
+        flex-direction: column; flex-wrap: nowrap; gap: 0; padding: 4px 20px 14px;
+        background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 16px 28px rgba(19,29,71,.12);
+      }
+      .js .nav.open { display: flex; }
+      .js .nav a { padding: 15px 2px; font-size: 1.02rem; border-bottom: 1px solid var(--line); }
+      .js .nav a:last-child { border-bottom: 0; }
+    }
+    @media (min-width: 900px) {
+      .topbar .container { flex-wrap: nowrap; }
+      .nav { order: 0; width: auto; padding-bottom: 0; margin-left: auto; margin-right: 12px; }
+    }
+    @media (max-width: 480px) {
+      .brand img { height: 36px; }
+      .topbar .btn { padding: 8px 14px; font-size: .9rem; }
+    }
 
     /* ---------- Hero ---------- */
     .hero {
@@ -281,7 +324,21 @@
       <a class="brand" href="#inicio">
         <img src="img/logo.png" alt="ICPI – Instituto de Consejería Pastoral Integral" width="940" height="202">
       </a>
-      <a class="btn btn-navy" href="#inscripcion">Inscríbete</a>
+
+      <nav class="nav" id="menu" aria-label="Secciones de la página">
+        <a href="#datos">Datos del curso</a>
+        <a href="#aprenderas">Qué aprenderás</a>
+        <a href="#para-quien">Para quién</a>
+        <a href="#fundador">Fundador</a>
+        <a href="#expositor">Expositor</a>
+      </nav>
+
+      <div class="bar-actions">
+        <a class="btn btn-navy" href="#inscripcion">Inscríbete</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -301,7 +358,7 @@
           <p class="expositor-line">Imparte: <strong>Mg. Herbert Grenett Ortiz</strong> · pastor y psicólogo clínico · director de ICPI</p>
         </div>
 
-        <aside class="facts" aria-labelledby="datos-titulo">
+        <aside class="facts" id="datos" aria-labelledby="datos-titulo">
           <h2 id="datos-titulo">Datos del curso</h2>
           <dl>
             <div class="fact">
@@ -499,5 +556,38 @@
       <p><a href="https://www.instagram.com/icpi.consejeria/" rel="noopener">Síguenos en Instagram · @icpi.consejeria</a></p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector('.menu-toggle');
+      var nav = document.getElementById('menu');
+      var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+
+      function setOpen(open) {
+        nav.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      }
+      toggle.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
+      links.forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+      document.addEventListener('click', function (e) {
+        if (!nav.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
+      });
+
+      // Resalta en la barra la sección que se está viendo
+      if (!('IntersectionObserver' in window)) return;
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          links.forEach(function (a) { a.removeAttribute('aria-current'); });
+          var a = map[en.target.id]; if (a) a.setAttribute('aria-current', 'true');
+        });
+      }, { rootMargin: '-35% 0px -55% 0px' });
+      Object.keys(map).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+    })();
+  </script>
 </body>
 </html>
