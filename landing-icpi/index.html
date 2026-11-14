@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La salud mental del líder · Curso taller ICPI</title>
+  <meta name="description" content="Curso taller online en vivo con el Mg. Herbert Grenett, pastor y psicólogo clínico: aprende a cuidar tu salud mental y espiritual para un ministerio efectivo y sustentable.">
+  <meta name="theme-color" content="#14282e">
+
+  <!-- Open Graph (agrega og:image con el afiche del curso cuando lo tengas) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:title" content="La salud mental del líder: piedra angular para el ministerio efectivo">
+  <meta property="og:description" content="Curso taller online · Sábado 30 de mayo · 09:00 a 12:00 hrs (horario de Chile) · Instituto de Consejería Pastoral Integral.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #14282e;
+      --teal: #1c434b;
+      --teal-soft: #2a5d67;
+      --sand: #f7f2ea;
+      --paper: #fffdf9;
+      --line: #e5dccd;
+      --muted: #55676c;
+      --gold: #e3b15f;
+      --gold-deep: #9a6417;
+      --radius: 18px;
+      --serif: "Fraunces", Georgia, "Times New Roman", serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--sand);
+    }
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: var(--serif); line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+    p { margin: 0; }
+    ul { margin: 0; padding: 0; list-style: none; }
+
+    .container { width: 100%; max-width: 1120px; margin-inline: auto; padding-inline: 20px; }
+    section { scroll-margin-top: 72px; }
+
+    .skip {
+      position: absolute; left: 12px; top: -60px; z-index: 100;
+      background: var(--gold); color: var(--ink); padding: 10px 16px; border-radius: 8px; font-weight: 600;
+    }
+    .skip:focus { top: 12px; }
+
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+
+    /* ---------- Botones ---------- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 48px; padding: 12px 26px;
+      font: 600 1rem/1.2 var(--sans); text-decoration: none;
+      border-radius: 999px; border: 2px solid transparent;
+      transition: transform .15s ease, background-color .15s ease, border-color .15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: var(--gold); color: var(--ink); }
+    .btn-gold:hover { background: #edc57f; }
+    .btn-ghost { border-color: rgba(255,255,255,.4); color: #fff; }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+    .btn-lg { min-height: 56px; padding-inline: 34px; font-size: 1.08rem; }
+
+    /* ---------- Cabecera ---------- */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(20,40,46,.94); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+    .brand-mark {
+      font-family: var(--serif); font-weight: 700; font-size: 1.15rem; letter-spacing: .04em;
+      border: 2px solid var(--gold); color: var(--gold); border-radius: 10px; padding: 3px 9px;
+    }
+    .brand-name { font-size: .78rem; line-height: 1.3; color: rgba(255,255,255,.78); max-width: 180px; display: none; }
+    .topbar .btn { min-height: 42px; padding: 8px 20px; font-size: .95rem; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative; overflow: hidden; color: #fff;
+      background:
+        radial-gradient(900px 500px at 85% -10%, rgba(227,177,95,.22), transparent 60%),
+        radial-gradient(700px 500px at -10% 110%, rgba(42,93,103,.9), transparent 60%),
+        var(--ink);
+      padding: 56px 0 72px;
+    }
+    .hero::after { /* círculos decorativos: “refugio / alma” */
+      content: ""; position: absolute; right: -180px; bottom: -220px; width: 520px; height: 520px;
+      border-radius: 50%; border: 1px solid rgba(227,177,95,.35);
+      box-shadow: 0 0 0 60px rgba(227,177,95,.04), 0 0 0 120px rgba(227,177,95,.03);
+      pointer-events: none;
+    }
+    .hero-grid { position: relative; z-index: 1; display: grid; gap: 40px; }
+    .eyebrow {
+      display: inline-block; font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+    }
+    .hero h1 { font-size: clamp(2.1rem, 6.2vw, 3.7rem); font-weight: 600; }
+    .hero h1 em { font-style: italic; color: var(--gold); font-weight: 500; }
+    .hero .lead { margin-top: 22px; font-size: 1.12rem; color: rgba(255,255,255,.86); max-width: 56ch; }
+    .hero-cta { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero .expositor-line { margin-top: 26px; font-size: .95rem; color: rgba(255,255,255,.7); }
+    .hero .expositor-line strong { color: #fff; font-weight: 600; }
+
+    .facts {
+      background: var(--paper); color: var(--ink);
+      border-radius: var(--radius); padding: 26px 24px;
+      box-shadow: 0 24px 60px rgba(0,0,0,.28);
+    }
+    .facts h2 { font-size: 1.1rem; font-family: var(--sans); font-weight: 600; letter-spacing: .02em; color: var(--muted); margin-bottom: 6px; }
+    .fact { padding: 14px 0; border-top: 1px solid var(--line); }
+    .fact:first-of-type { border-top: 0; }
+    .fact dt { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-deep); }
+    .fact dd { margin: 2px 0 0; font-size: 1.12rem; font-weight: 500; }
+    .fact dd small { display: block; font-size: .88rem; color: var(--muted); font-weight: 400; }
+    dl { margin: 0; }
+
+    /* ---------- Secciones ---------- */
+    .section { padding: 72px 0; }
+    .section-head { max-width: 720px; margin-bottom: 40px; }
+    .kicker { font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 12px; display: block; }
+    .section h2 { font-size: clamp(1.7rem, 4.4vw, 2.5rem); font-weight: 600; }
+    .section-head p { margin-top: 14px; color: var(--muted); }
+
+    /* Objetivo general */
+    .goal {
+      background: var(--teal); color: #fff; border-radius: var(--radius);
+      padding: 32px 28px; margin-bottom: 28px; position: relative; overflow: hidden;
+    }
+    .goal .kicker { color: var(--gold); }
+    .goal p { font-family: var(--serif); font-size: clamp(1.15rem, 2.6vw, 1.5rem); line-height: 1.5; font-weight: 500; }
+
+    /* Objetivos específicos */
+    .objectives { display: grid; gap: 18px; }
+    .obj {
+      background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 26px 24px;
+    }
+    .obj .num { font-family: var(--serif); font-size: 2.4rem; font-weight: 600; color: var(--gold-deep); line-height: 1; margin-bottom: 14px; display: block; }
+    .obj h3 { font-size: 1.25rem; margin-bottom: 10px; }
+    .obj p { color: var(--muted); font-size: .98rem; }
+    .obj.final { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .obj.final .num { color: var(--gold); }
+    .obj.final p { color: rgba(255,255,255,.8); }
+
+    /* Para quién */
+    .who { background: var(--paper); border-block: 1px solid var(--line); }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip {
+      padding: 10px 18px; border-radius: 999px; background: var(--sand); border: 1px solid var(--line);
+      font-weight: 500; font-size: .98rem;
+    }
+    .who .closing { margin-top: 26px; font-family: var(--serif); font-size: 1.25rem; font-weight: 500; max-width: 40ch; }
+
+    /* Expositor */
+    .speaker { display: grid; gap: 32px; align-items: start; }
+    .portrait {
+      aspect-ratio: 1; width: min(100%, 280px); border-radius: var(--radius);
+      display: grid; place-items: center;
+      background: linear-gradient(140deg, var(--teal-soft), var(--ink));
+      color: var(--gold); font-family: var(--serif); font-size: 4.5rem; font-weight: 600; letter-spacing: .04em;
+      position: relative; overflow: hidden;
+    }
+    .portrait::after { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(227,177,95,.4); border-radius: calc(var(--radius) - 6px); }
+    .speaker h2 { margin-bottom: 6px; }
+    .speaker .role { color: var(--gold-deep); font-weight: 600; margin-bottom: 20px; }
+    .creds { display: grid; gap: 12px; }
+    .creds li { position: relative; padding-left: 28px; }
+    .creds li::before {
+      content: ""; position: absolute; left: 4px; top: .62em; width: 9px; height: 9px;
+      border-radius: 50%; background: var(--gold);
+    }
+    .creds li span { color: var(--muted); }
+
+    .training { margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--line); }
+    .training h3 { font-size: 1.35rem; margin-bottom: 18px; }
+    .training-grid { display: grid; gap: 12px; }
+    .training-grid li { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+    .training-grid strong { display: block; font-family: var(--serif); font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
+    .training-grid span { display: block; margin-top: 4px; font-size: .92rem; color: var(--muted); line-height: 1.5; }
+    @media (min-width: 640px) { .training-grid { grid-template-columns: 1fr 1fr; } }
+
+    /* Inscripción */
+    .signup {
+      background:
+        radial-gradient(700px 400px at 100% 0%, rgba(227,177,95,.18), transparent 60%),
+        var(--ink);
+      color: #fff; text-align: center; padding: 80px 0;
+    }
+    .signup .kicker { color: var(--gold); }
+    .signup h2 { font-size: clamp(1.8rem, 5vw, 2.8rem); max-width: 18ch; margin-inline: auto; }
+    .price-row { margin: 34px auto 0; display: grid; gap: 14px; max-width: 640px; }
+    .price {
+      border: 1px solid rgba(255,255,255,.18); border-radius: var(--radius); padding: 22px 20px;
+      background: rgba(255,255,255,.05);
+    }
+    .price small { display: block; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .price strong { font-family: var(--serif); font-size: 2rem; font-weight: 600; }
+    .signup .meta { margin-top: 26px; color: rgba(255,255,255,.8); }
+    .signup .btn { margin-top: 30px; }
+    .signup .note { margin-top: 18px; font-size: .92rem; color: rgba(255,255,255,.65); }
+
+    footer { background: #0e1d21; color: rgba(255,255,255,.75); padding: 44px 0; font-size: .95rem; }
+    .foot { display: grid; gap: 22px; }
+    .foot .blessing { font-family: var(--serif); font-size: 1.2rem; color: #fff; }
+    .foot a { color: var(--gold); text-underline-offset: 3px; }
+
+    /* ---------- Escritorio ---------- */
+    @media (min-width: 640px) {
+      .brand-name { display: block; }
+      .price-row { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 900px) {
+      .hero { padding: 88px 0 104px; }
+      .hero-grid { grid-template-columns: 1.25fr .75fr; gap: 64px; align-items: center; }
+      .objectives { grid-template-columns: repeat(3, 1fr); }
+      .obj.final { grid-column: span 2; display: grid; align-content: center; }
+      .speaker { grid-template-columns: 280px 1fr; gap: 56px; }
+      .portrait { position: sticky; top: 96px; }
+      .foot { grid-template-columns: 1fr auto; align-items: end; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="#inicio" aria-label="ICPI – Instituto de Consejería Pastoral Integral">
+        <span class="brand-mark">ICPI</span>
+        <span class="brand-name">Instituto de Consejería Pastoral Integral</span>
+      </a>
+      <a class="btn btn-gold" href="#inscripcion">Inscríbete</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Curso taller · Online en vivo</span>
+          <h1>La salud mental del líder: <em>piedra angular</em> para el ministerio efectivo</h1>
+          <p class="lead">Aprende a reconocer, valorar y cultivar tu salud mental y espiritual como fundamento de un ministerio efectivo, sustentable y fiel al llamado de Dios.</p>
+          <div class="hero-cta">
+            <a class="btn btn-gold btn-lg" href="#inscripcion">Quiero inscribirme</a>
+            <a class="btn btn-ghost btn-lg" href="#aprenderas">Ver qué aprenderás</a>
+          </div>
+          <p class="expositor-line">Imparte: <strong>Mg. Herbert Grenett Ortiz</strong> · pastor y psicólogo clínico · director de ICPI</p>
+        </div>
+
+        <aside class="facts" aria-labelledby="datos-titulo">
+          <h2 id="datos-titulo">Datos del curso</h2>
+          <dl>
+            <div class="fact">
+              <dt>Fecha</dt>
+              <dd>Sábado 30 de mayo</dd>
+            </div>
+            <div class="fact">
+              <dt>Horario</dt>
+              <dd>09:00 a 12:00 hrs<small>Horario de Chile</small></dd>
+            </div>
+            <div class="fact">
+              <dt>Modalidad</dt>
+              <dd>Sincrónica, vía Zoom</dd>
+            </div>
+            <div class="fact">
+              <dt>Inscripción</dt>
+              <dd>$20.000 CLP<small>Extranjeros: USD 25</small></dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- QUÉ APRENDERÁS -->
+    <section class="section" id="aprenderas">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Qué aprenderás</span>
+          <h2>Un ministerio sano comienza en un líder sano</h2>
+          <p>Integramos perspectivas bíblicas, psicológicas y espirituales para que identifiques dinámicas disfuncionales internas, las prevengas y las reemplaces por prácticas de bienestar integral.</p>
+        </div>
+
+        <div class="goal">
+          <span class="kicker">Objetivo general</span>
+          <p>Capacitar a líderes de iglesias para que aprendan a reconocer, valorar y cultivar su salud mental y espiritual como fundamento indispensable de un ministerio efectivo, sustentable y fiel al llamado de Dios.</p>
+        </div>
+
+        <ol class="objectives" style="list-style:none;margin:0;padding:0">
+          <li class="obj">
+            <span class="num" aria-hidden="true">01</span>
+            <h3>Reconoce un liderazgo emocionalmente enfermo</h3>
+            <p>Identifica los síntomas y patrones de un liderazgo emocionalmente enfermo, contrástalos con un modelo saludable y asume una postura honesta frente a tu propia realidad interior.</p>
+          </li>
+          <li class="obj">
+            <span class="num" aria-hidden="true">02</span>
+            <h3>Sacrificio genuino vs. agotamiento</h3>
+            <p>Comprende la diferencia entre sacrificio genuino y agotamiento autodestructivo, los factores personales y culturales que llevan al burnout ministerial y los principios bíblicos de un servicio apasionado y sostenible.</p>
+          </li>
+          <li class="obj">
+            <span class="num" aria-hidden="true">03</span>
+            <h3>Las toxinas del alma</h3>
+            <p>Identifica las principales toxinas que deterioran la salud mental del líder y reflexiona sobre cuáles de ellas están operando en tu propia experiencia ministerial.</p>
+          </li>
+          <li class="obj">
+            <span class="num" aria-hidden="true">04</span>
+            <h3>Reabastecimiento espiritual</h3>
+            <p>Descubre y asume prácticas concretas para liderar desde un alma plena, y no desde el vacío, la obligación o el agotamiento.</p>
+          </li>
+          <li class="obj final">
+            <span class="num" aria-hidden="true">05</span>
+            <h3>Te llevas tu propio plan de cuidado del alma</h3>
+            <p>Elabora una propuesta personal: identifica al menos tres áreas de mejora en tu salud mental y espiritual y define pasos concretos, sostenibles y bíblicamente fundamentados para el período inmediato.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PARA QUIÉN -->
+    <section class="section who" id="para-quien">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Dirigido a</span>
+          <h2>Para quienes sirven en la iglesia</h2>
+        </div>
+        <ul class="chips">
+          <li class="chip">Pastores</li>
+          <li class="chip">Ancianos</li>
+          <li class="chip">Presbíteros</li>
+          <li class="chip">Diáconos</li>
+          <li class="chip">Maestros de escuela dominical</li>
+          <li class="chip">Líderes de ministerios</li>
+          <li class="chip">Docentes de instituto bíblico</li>
+          <li class="chip">Profesionales cristianos</li>
+        </ul>
+        <p class="closing">…y toda persona que esté llamada a servir en el Reino de Dios.</p>
+      </div>
+    </section>
+
+    <!-- EXPOSITOR -->
+    <section class="section" id="expositor">
+      <div class="container speaker">
+        <!-- Reemplazar por <img src="foto-herbert.jpg" alt="Mg. Herbert Grenett Ortiz"> cuando tengas la foto -->
+        <div class="portrait" role="img" aria-label="Iniciales de Herbert Grenett">HG</div>
+
+        <div>
+          <span class="kicker">Sobre el expositor</span>
+          <h2>Mg. Herbert Grenett Ortiz</h2>
+          <p class="role">Pastor · Psicólogo clínico · Director y docente de ICPI</p>
+          <ul class="creds">
+            <li>Ministro ordenado de <span>Las Asambleas de Dios de Chile</span> y psicólogo clínico acreditado.</li>
+            <li>Máster en <span>terapias psicológicas de tercera generación</span>, con entrenamientos clínicos centrados en adicciones, depresión, ansiedad, trauma y TOC.</li>
+            <li>Pastorea junto a su esposa Carolina la <span>Iglesia Luz de Esperanza para la Familia</span>, en Quilpué, Chile.</li>
+            <li>Docente de pregrado y posgrado en la formación de psicólogos clínicos, a nivel nacional e internacional, y profesor en institutos bíblicos interdenominacionales.</li>
+            <li>Finalizando una maestría en teología práctica en la <span>Facultad de Teología de Las Asambleas de Dios de América Latina y el Caribe</span>.</li>
+          </ul>
+
+          <div class="training">
+            <h3>Formación y acreditaciones</h3>
+            <ul class="training-grid">
+              <li><strong>Licenciado en Psicología</strong><span>Universidad del Mar, Valparaíso (2005)</span></li>
+              <li><strong>Especialista en Psicoterapia acreditado</strong><span>CONAPC: Sociedad Chilena de Psicología Clínica y Colegio de Psicólogos de Chile (2015)</span></li>
+              <li><strong>Máster en Terapias de Tercera Generación</strong><span>ISEB · Universidad Isabel I de Castilla (2023–2024)</span></li>
+              <li><strong>Terapia Cognitivo-Conductual</strong><span>Postítulo de especialización y acreditación clínica, Instituto del Comportamiento (2012–2014)</span></li>
+              <li><strong>Terapia Conductual Dialéctica (DBT)</strong><span>Entrenamiento con DBT Latinoamérica y Linehan Institute Behavioral Tech (2016–2017)</span></li>
+              <li><strong>TOC y espectro obsesivo-compulsivo</strong><span>Diplomado, TOC Argentina (2022) · Entrenamiento clínico BTTI, International OCD Foundation (2024)</span></li>
+              <li><strong>Adicciones</strong><span>Diplomados en prevención, tratamiento y rehabilitación, Facultad de Medicina, Universidad de Santiago (2005 y 2008)</span></li>
+              <li><strong>Trauma</strong><span>Entrenamiento en Terapia de Exposición Prolongada (2021) y en Terapia de Exposición Narrativa (2023)</span></li>
+              <li><strong>Depresión y ansiedad</strong><span>Actualización en Activación Conductual y TCC de la depresión (2020) y en trastornos de ansiedad (2014)</span></li>
+              <li><strong>Terapia de Aceptación y Compromiso (ACT)</strong><span>Diplomado en curso, ITECOC México (2025 a la fecha)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSCRIPCIÓN -->
+    <section class="signup" id="inscripcion">
+      <div class="container">
+        <span class="kicker">Inscripción</span>
+        <h2>Reserva tu cupo y cuida el alma desde la que sirves</h2>
+
+        <div class="price-row">
+          <div class="price"><small>Chile</small><strong>$20.000 CLP</strong></div>
+          <div class="price"><small>Extranjeros</small><strong>USD 25</strong></div>
+        </div>
+
+        <p class="meta">Sábado 30 de mayo · 09:00 a 12:00 hrs (horario de Chile) · En vivo por Zoom</p>
+
+        <!-- ▼▼ PEGAR AQUÍ EL LINK DEL FORMULARIO DE INSCRIPCIÓN ▼▼ -->
+        <a class="btn btn-gold btn-lg" href="REEMPLAZAR_LINK_FORMULARIO">Ir al formulario de inscripción</a>
+
+        <p class="note">¿Dudas? Escríbenos por Instagram a <a href="https://www.instagram.com/icpi.consejeria/" rel="noopener">@icpi.consejeria</a>, donde encontrarás más información del curso y del Instituto.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <p class="blessing">Bendiciones para tu vida, familia y ministerio.</p>
+        <p>Instituto de Consejería Pastoral Integral · ICPI</p>
+      </div>
+      <p><a href="https://www.instagram.com/icpi.consejeria/" rel="noopener">Síguenos en Instagram · @icpi.consejeria</a></p>
+    </div>
+  </footer>
+</body>
+</html>
